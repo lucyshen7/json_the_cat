@@ -5,7 +5,7 @@ const url = `https://api.thecatapi.com/v1/breeds/search?q=${breed}`; // API endp
 request(url, (error, response, body) => {
   if (!error) {
     const data = JSON.parse(body);
-    if (breed !== data[0].name) {
+    if (breed !== body[0].name) {
       console.log(`ERROR: Breed '${breed}' not found`);
     } else { // breed is found
       const description = data[0].description;
